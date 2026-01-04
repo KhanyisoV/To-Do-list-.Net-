@@ -7,9 +7,15 @@ namespace ToDoApp.Services
 
     {
         private readonly List<ToDoItem> _toDoItems = new List<ToDoItem>();
-        public void AddToDoItem(ToDoItem item)
+        private int _nextId = 1;
+         public ToDoItem AddToDoItem(ToDoItem item) 
         {
+           
+            var idProperty = typeof(ToDoItem).GetProperty("Id");
+            idProperty?.SetValue(item, _nextId++);
+            
             _toDoItems.Add(item);
+            return item;
         }
         public ToDoItem? GetToDoItemById(int id)
         {
@@ -17,11 +23,25 @@ namespace ToDoApp.Services
         }
         
         public void UpdateToDoItem(ToDoItem item)
-        {
-            string existingItemName = GetToDoItemById(item.Id)?.Name ?? "";
-            if (existingItemName != item.Name)
+        {var existingItem = GetToDoItemById(item.Id);
+            if (existingItem == null) return;
+
+            if (existingItem.Name != item.Name)
             {
-                GetToDoItemById(item.Id)?.UpdateName(item.Name);
+                existingItem.UpdateName(item.Name);
+            }    
+            if (existingItem.IsCompleted != item.IsCompleted)
+            {
+                if (item.IsCompleted)
+                {
+                    existingItem.MarkAsCompleted();
+                }
+                else
+                {
+            
+                    var isCompletedProperty = typeof(ToDoItem).GetProperty("IsCompleted");
+                    isCompletedProperty?.SetValue(existingItem, false);
+                }
             }
         }
         public void DeleteToDoItem(int itemId)

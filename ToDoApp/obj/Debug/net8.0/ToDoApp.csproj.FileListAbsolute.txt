@@ -1,3 +1,6 @@
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\todo-frontend\package-lock.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\todo-frontend\package.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\todo-frontend\public\manifest.json
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.Api\appsettings.Development.json
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.Api\appsettings.json
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.Api\obj\project.assets.json
