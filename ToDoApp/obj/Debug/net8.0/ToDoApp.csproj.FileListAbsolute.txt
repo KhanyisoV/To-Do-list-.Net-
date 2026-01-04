@@ -1,0 +1,15 @@
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.exe
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.deps.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.runtimeconfig.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.dll
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.pdb
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.AssemblyInfoInputs.cache
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.AssemblyInfo.cs
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.csproj.CoreCompileInputs.cache
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.sourcelink.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.dll
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\refint\ToDoApp.dll
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.pdb
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.genruntimeconfig.cache
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ref\ToDoApp.dll
