@@ -1,3 +1,8 @@
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.Api\appsettings.Development.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.Api\appsettings.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.Api\obj\project.assets.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.Api\obj\ToDoApp.Api.csproj.nuget.dgspec.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.Api\Properties\launchSettings.json
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.exe
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.deps.json
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\bin\Debug\net8.0\ToDoApp.runtimeconfig.json
@@ -7,7 +12,16 @@ C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.GeneratedMSBuil
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.AssemblyInfoInputs.cache
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.AssemblyInfo.cs
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.csproj.CoreCompileInputs.cache
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.sourcelink.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\staticwebassets\msbuild.ToDoApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\staticwebassets\msbuild.build.ToDoApp.props
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ToDoApp.props
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ToDoApp.props
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\scopedcss\bundle\ToDoApp.styles.css
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.dll
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\refint\ToDoApp.dll
 C:\Users\khany\To-Do-list-.Net-\ToDoApp\obj\Debug\net8.0\ToDoApp.pdb
