@@ -7,8 +7,9 @@ import {
 } from './services/todoApi';
 
 const TodoList = () => {
-  const [todos, setTodos] = useState([]);
+  const [Todo, setTodo] = useState([]);
   const [newTodo, setNewTodo] = useState('');
+  const [description, setDescription] = useState('');
 
   useEffect(() => {
     fetchTodo();
@@ -17,11 +18,11 @@ const TodoList = () => {
   const fetchTodo = async () => {
     try {
       const data = await getAllTodoItems();
-      console.log('Fetched todos:', data);
+      console.log('Fetched Todo:', data);
       console.log('Todo Ids:', data.map(t => t.id)); // Changed to lowercase
-      setTodos(data);
+      setTodo(data);
     } catch (err) {
-      console.error('Failed to fetch todos:', err);
+      console.error('Failed to fetch Todo:', err);
     }
   };
 
@@ -32,11 +33,12 @@ const TodoList = () => {
       const created = await createTodoItem({ 
         name: newTodo,           // Changed to lowercase
         isCompleted: false,       // Already camelCase
-        description: ""
+        description: description  // Added description field
       });
       console.log('Created todo:', created);
-      setTodos([...todos, created]);
+      setTodo([...Todo, created]);
       setNewTodo('');
+      setDescription('');
     } catch (err) {
       console.error('Failed to create todo:', err);
     }
@@ -45,7 +47,7 @@ const TodoList = () => {
   const handleDelete = async (id) => {
     try {
       await deleteTodoItem(id);
-      setTodos(todos.filter(todo => todo.id !== id)); // Changed to lowercase
+      setTodo(Todo.filter(todo => todo.id !== id)); // Changed to lowercase
     } catch (err) {
       console.error('Failed to delete todo:', err);
     }
@@ -58,8 +60,10 @@ const TodoList = () => {
       ...todo, 
       isCompleted: !todo.isCompleted 
     });
+
+
     console.log('Updated todo received:', updated);
-    setTodos(todos.map(t => t.id === todo.id ? updated : t));
+    setTodo(Todo.map(t => t.id === todo.id ? updated : t));
   } catch (err) {
     console.error('Failed to update todo:', err);
   }
@@ -74,21 +78,30 @@ const TodoList = () => {
         placeholder="Enter new todo"
         onChange={(e) => setNewTodo(e.target.value)}
       />
+      <input type="text" 
+        value={description}
+        placeholder="Enter description"
+        onChange={(e) => setDescription(e.target.value)}
+      />
       <button onClick={handleAddTodo}>Add</button>
 
       <ul>
-        {todos.map(todo => (
-          <li key={todo.id} style={{ marginTop: '10px' }}> {/* Changed to lowercase */}
+        {Todo.map(todo => (
+          <li key={todo.id} style={{ marginTop: '10px' }}>
             <span
               style={{
                 textDecoration: todo.isCompleted ? 'line-through' : 'none',
                 marginRight: '10px'
               }}
             >
-              {todo.name} {/* Changed to lowercase */}
+              {todo.name}
+              {todo.description ? ` - ${todo.description}` : ''}
             </span>
+            {/* Complete/Undo button */}
             <button onClick={() => handleToggleComplete(todo)}>
               {todo.isCompleted ? 'Undo' : 'Complete'}
+
+               
             </button>
             <button onClick={() => handleDelete(todo.id)} style={{ marginLeft: '5px' }}> {/* Changed to lowercase */}
               Delete

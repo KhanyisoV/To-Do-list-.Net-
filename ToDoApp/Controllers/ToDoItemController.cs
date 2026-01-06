@@ -51,12 +51,14 @@ namespace ToDoApp.Api.Controllers
             {
                 return NotFound();
             }
+
             _toDoServices.UpdateToDoItem(item);
+
             
-            // Get the updated item and return it
             var updatedItem = _toDoServices.GetToDoItemById(id);
-            return Ok(updatedItem);  // Return the updated item instead of NoContent
+            return Ok(updatedItem);
         }
+
 
         [HttpDelete("{id}")]
         public IActionResult DeleteToDoItem(int id)

@@ -38,7 +38,7 @@ namespace ToDoApp.Services
                 }
                 else
                 {
-            
+                    // Use reflection to reset IsCompleted
                     var isCompletedProperty = typeof(ToDoItem).GetProperty("IsCompleted");
                     isCompletedProperty?.SetValue(existingItem, false);
                 }
