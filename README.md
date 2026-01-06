@@ -231,7 +231,7 @@ json{
   "title": "Not Found",
   "status": 404
 }
-##🎨 Design Decisions
+## 🎨 Design Decisions
 Frontend Design
 1. Black and White Theme
 
@@ -301,7 +301,7 @@ Should be restricted in production
 Camel case naming convention for JavaScript compatibility
 Case-insensitive deserialization for flexibility
 
-##🔄 Data Flow
+## 🔄 Data Flow
 Creating a Task
 User Input → React Component → Axios Client → API Controller 
 → Service Layer → In-Memory Store → Response → Update UI
@@ -309,7 +309,7 @@ Completing a Task
 Click Checkbox → Toggle Handler → PUT Request → Controller 
 → Service.UpdateToDoItem() → Update State → Response 
 → UI Update (strikethrough, move to completed section)
-🧪 Testing the Application
+## 🧪 Testing the Application
 Manual Testing Checklist
 
  Create a new task with name only
@@ -324,7 +324,7 @@ Manual Testing Checklist
  Verify hover effects on all buttons
  Test with long task names and descriptions
 
-##🚧 Future Enhancements
+## 🚧 Future Enhancements
 Features
 
  Database integration (SQL Server / PostgreSQL)
@@ -338,7 +338,7 @@ Features
  Dark mode toggle
  Multiple task lists
 
-##Technical Improvements
+## Technical Improvements
 
  Unit tests for both frontend and backend
  Integration tests
