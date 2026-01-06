@@ -43,21 +43,24 @@ namespace ToDoApp.Api.Controllers
         }
 
 
-        [HttpPut("{id}")]
-        public IActionResult UpdateToDoItem(int id, [FromBody] ToDoItem item)
-        {
-            var existingItem = _toDoServices.GetToDoItemById(id);
-            if (existingItem == null)
-            {
-                return NotFound();
-            }
+       [HttpPut("{id}")]
+public IActionResult UpdateToDoItem(int id, [FromBody] ToDoItem item)
+{
+    var existingItem = _toDoServices.GetToDoItemById(id);
+    if (existingItem == null)
+    {
+        return NotFound();
+    }
 
-            _toDoServices.UpdateToDoItem(item);
+    // ADD THESE TWO LINES to set the ID from route:
+    var idProperty = typeof(ToDoItem).GetProperty("Id");
+    idProperty?.SetValue(item, id);
 
-            
-            var updatedItem = _toDoServices.GetToDoItemById(id);
-            return Ok(updatedItem);
-        }
+    _toDoServices.UpdateToDoItem(item);
+    
+    var updatedItem = _toDoServices.GetToDoItemById(id);
+    return Ok(updatedItem);
+}
 
 
         [HttpDelete("{id}")]

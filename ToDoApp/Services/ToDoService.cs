@@ -23,27 +23,34 @@ namespace ToDoApp.Services
         }
         
         public void UpdateToDoItem(ToDoItem item)
-        {var existingItem = GetToDoItemById(item.Id);
-            if (existingItem == null) return;
+{
+    var existingItem = GetToDoItemById(item.Id);
+    if (existingItem == null) return;
 
-            if (existingItem.Name != item.Name)
-            {
-                existingItem.UpdateName(item.Name);
-            }    
-            if (existingItem.IsCompleted != item.IsCompleted)
-            {
-                if (item.IsCompleted)
-                {
-                    existingItem.MarkAsCompleted();
-                }
-                else
-                {
-                    // Use reflection to reset IsCompleted
-                    var isCompletedProperty = typeof(ToDoItem).GetProperty("IsCompleted");
-                    isCompletedProperty?.SetValue(existingItem, false);
-                }
-            }
+    if (existingItem.Name != item.Name)
+    {
+        existingItem.UpdateName(item.Name);
+    }
+    
+  
+    if (existingItem.Description != item.Description)
+    {
+        existingItem.UpdateDescription(item.Description);
+    }
+    
+    if (existingItem.IsCompleted != item.IsCompleted)
+    {
+        if (item.IsCompleted)
+        {
+            existingItem.MarkAsCompleted();
         }
+        else
+        {
+            var isCompletedProperty = typeof(ToDoItem).GetProperty("IsCompleted");
+            isCompletedProperty?.SetValue(existingItem, false);
+        }
+    }
+}
         public void DeleteToDoItem(int itemId)
         {
             if (GetToDoItemById(itemId) == null)

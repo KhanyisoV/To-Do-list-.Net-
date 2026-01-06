@@ -9,7 +9,7 @@ namespace Models
     
         public string Name { get; set; } = null!;
         
-        public bool IsCompleted { get; private set; }
+        public bool IsCompleted { get; set; }
         public string Description { get; set; } = null!;
         public DateTime DateCompleted { get; protected set; }
         public  DateTime DateCreated { get; private set; } = DateTime.Now;
