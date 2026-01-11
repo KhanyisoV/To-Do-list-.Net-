@@ -109,33 +109,6 @@ Node.js & npm - Frontend package management
 .NET SDK - Backend development
 Visual Studio Code / Visual Studio - IDEs
 
-📁 Project Structure
-TaskFlow/
-│
-├── frontend/                    # React application
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   │   └── TodoList.jsx
-│   │   ├── services/
-│   │   │   └── todoApi.js
-│   │   ├── App.js
-│   │   └── index.js
-│   ├── package.json
-│   └── README.md
-│
-└── backend/                     # ASP.NET Core API
-    ├── Controllers/
-    │   └── ToDoItemController.cs
-    ├── Services/
-    │   └── ToDoService.cs
-    ├── Interfaces/
-    │   └── IToDoServices.cs
-    ├── Models/
-    │   └── ToDoItem.cs
-    ├── Program.cs
-    └── ToDoApp.csproj
-🚀 Getting Started
 ##Prerequisites
 
 Node.js (v14 or higher)
