@@ -34,35 +34,6 @@ This project is designed to help beginners understand:
 
 ---
 
-
-Frontend Architecture (React)
-src/
-├── components/
-│   └── TodoList.jsx          # Main component with all UI logic
-├── services/
-│   └── todoApi.js            # API client service
-└── App.js                    # Root component
-Component Hierarchy:
-App
-└── TodoList
-    ├── Header (with Progress Card)
-    ├── Add Todo Card
-    ├── Tasks List
-    │   └── TaskCard (multiple instances)
-    └── Footer
-Backend Architecture (ASP.NET Core)
-ToDoApp/
-├── Controllers/
-│   └── ToDoItemController.cs     # API endpoints
-├── Services/
-│   └── ToDoService.cs            # Business logic
-├── Interfaces/
-│   └── IToDoServices.cs          # Service contract
-├── Models/
-│   └── ToDoItem.cs               # Domain model
-└── Program.cs                    # Application configuration
-Design Pattern: Repository Pattern with Dependency Injection
-🛠️ Tech Stack
 Frontend
 
 React 18.x - UI library
@@ -82,13 +53,13 @@ Node.js & npm - Frontend package management
 .NET SDK - Backend development
 Visual Studio Code / Visual Studio - IDEs
 
-##Prerequisites
+## Prerequisites
 
 Node.js (v14 or higher)
 .NET SDK (6.0 or higher)
 npm or yarn
 
-##Installation
+## Installation
 1. Clone the Repository
 bashgit clone https://github.com/yourusername/taskflow.git
 cd taskflow
