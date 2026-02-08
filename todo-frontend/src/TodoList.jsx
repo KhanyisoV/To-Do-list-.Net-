@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Trash2, Check, X, Plus, CheckCircle2, Circle } from 'lucide-react';
 
@@ -63,13 +64,18 @@ const TodoList = () => {
 
         .app-container {
           min-height: 100vh;
-          background: #f8f8f8;
           position: relative;
           overflow: hidden;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+          background-image: url('/nihilist-penguin-2560x1080-25229.jpg');
+          background-size: contain;
+          background-position: center center;
+          background-attachment: fixed;
+          background-repeat: no-repeat;
+          
         }
 
-        /* Subtle gradient overlay */
+        /* Dark overlay to ensure readability */
         .app-container::before {
           content: '';
           position: fixed;
@@ -77,54 +83,9 @@ const TodoList = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(248,248,248,0) 100%);
+          background: rgba(0, 0, 0, 0.3);
           pointer-events: none;
           z-index: 0;
-        }
-
-        /* Animated Background Elements - more subtle */
-        .blob {
-          position: absolute;
-          border-radius: 50%;
-          filter: blur(100px);
-          opacity: 0.03;
-          mix-blend-mode: normal;
-          pointer-events: none;
-        }
-
-        .blob-1 {
-          top: 10%;
-          left: -10%;
-          width: 600px;
-          height: 600px;
-          background: #000000;
-          animation: blob 20s infinite ease-in-out;
-        }
-
-        .blob-2 {
-          top: 40%;
-          right: -10%;
-          width: 500px;
-          height: 500px;
-          background: #000000;
-          animation: blob 25s infinite ease-in-out;
-          animation-delay: 5s;
-        }
-
-        .blob-3 {
-          bottom: -10%;
-          left: 30%;
-          width: 550px;
-          height: 550px;
-          background: #000000;
-          animation: blob 30s infinite ease-in-out;
-          animation-delay: 10s;
-        }
-
-        @keyframes blob {
-          0%, 100% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(50px, -30px) scale(1.05); }
-          66% { transform: translate(-30px, 40px) scale(0.95); }
         }
 
         /* Confetti Animation */
@@ -193,11 +154,11 @@ const TodoList = () => {
         }
 
         .main-icon {
-          background: #000000;
-          color: white;
+          background: #ffffff;
+          color: #000000;
           padding: 20px;
           border-radius: 50%;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -207,42 +168,45 @@ const TodoList = () => {
 
         .main-icon:hover {
           transform: scale(1.05);
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
 
         .title {
           font-size: clamp(3rem, 8vw, 5rem);
           font-weight: 300;
-          color: #000000;
+          color: #ffffff;
           margin-bottom: 16px;
           letter-spacing: -0.02em;
           line-height: 1.1;
+          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         .subtitle {
-          color: #666666;
+          color: #ffffff;
           font-size: clamp(1rem, 2vw, 1.125rem);
           font-weight: 300;
           letter-spacing: 0.02em;
           text-transform: uppercase;
           font-size: 0.875rem;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         /* Progress Card */
         .progress-card {
           max-width: 600px;
           margin: 48px auto 0;
-          background: #ffffff;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(10px);
           border-radius: 4px;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
           padding: clamp(28px, 4vw, 36px);
-          border: 1px solid #e8e8e8;
+          border: 1px solid rgba(255, 255, 255, 0.5);
           transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .progress-card:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
 
         @media (max-width: 768px) {
@@ -304,19 +268,20 @@ const TodoList = () => {
 
         /* Add Todo Card */
         .add-todo-card {
-          background: #ffffff;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(10px);
           border-radius: 4px;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
           padding: clamp(32px, 4vw, 40px);
           margin-bottom: 60px;
-          border: 1px solid #e8e8e8;
+          border: 1px solid rgba(255, 255, 255, 0.5);
           transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
           animation: fadeInUp 1s ease-out 0.2s both;
         }
 
         .add-todo-card:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
 
         .card-title {
@@ -422,12 +387,13 @@ const TodoList = () => {
 
         /* Empty State */
         .empty-state {
-          background: #ffffff;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(10px);
           border-radius: 4px;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
           padding: clamp(60px, 10vw, 100px) clamp(32px, 5vw, 48px);
           text-align: center;
-          border: 1px solid #e8e8e8;
+          border: 1px solid rgba(255, 255, 255, 0.5);
           transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
           animation: fadeInUp 1s ease-out 0.4s both;
         }
@@ -471,7 +437,8 @@ const TodoList = () => {
           display: flex;
           align-items: center;
           gap: 12px;
-          color: #999999;
+          color: #ffffff;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
           animation: fadeInUp 1s ease-out both;
         }
 
@@ -479,7 +446,8 @@ const TodoList = () => {
           width: 6px;
           height: 6px;
           border-radius: 50%;
-          background-color: #000000;
+          background-color: #ffffff;
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
           animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
 
@@ -500,11 +468,12 @@ const TodoList = () => {
 
         /* Task Card */
         .task-card {
-          background: #ffffff;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(10px);
           border-radius: 4px;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
           padding: clamp(24px, 4vw, 32px);
-          border: 1px solid #e8e8e8;
+          border: 1px solid rgba(255, 255, 255, 0.5);
           transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
           display: flex;
           align-items: flex-start;
@@ -514,8 +483,8 @@ const TodoList = () => {
 
         .task-card:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-          border-color: #d0d0d0;
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+          border-color: rgba(255, 255, 255, 0.8);
         }
 
         .task-card.completed {
@@ -674,21 +643,22 @@ const TodoList = () => {
 
         .celebration {
           display: inline-block;
-          background: #000000;
-          border: 1px solid #000000;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.5);
           border-radius: 2px;
           padding: 24px 48px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
           transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .celebration:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
 
         .celebration-text {
-          color: #ffffff;
+          color: #000000;
           font-weight: 300;
           font-size: clamp(1.125rem, 2.5vw, 1.375rem);
           display: flex;
@@ -713,14 +683,15 @@ const TodoList = () => {
         }
 
         .remaining-text {
-          color: #999999;
+          color: #ffffff;
           font-weight: 300;
           font-size: clamp(1rem, 2vw, 1.125rem);
           letter-spacing: 0.01em;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .remaining-count {
-          color: #000000;
+          color: #ffffff;
           font-weight: 400;
         }
 
@@ -734,11 +705,6 @@ const TodoList = () => {
       `}</style>
 
       <div className="app-container">
-        {/* Animated Background Blobs */}
-        <div className="blob blob-1"></div>
-        <div className="blob blob-2"></div>
-        <div className="blob blob-3"></div>
-
         {/* Celebration Confetti */}
         {celebrateComplete && (
           <>
@@ -958,3 +924,5 @@ const TaskCard = ({ todo, onToggle, onDelete }) => {
 };
 
 export default TodoList;
+
+
