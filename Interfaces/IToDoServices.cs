@@ -1,13 +1,13 @@
 using Models;
-namespace ToDoApp.Interfaces
-{   
 
-public interface IToDoServices
+namespace ToDoApp.Interfaces
 {
-    ToDoItem AddToDoItem(ToDoItem item);
-    ToDoItem? GetToDoItemById(int id);
-    IEnumerable<ToDoItem> GetAllToDoItems();
-    void UpdateToDoItem(ToDoItem item);
-    void DeleteToDoItem(int id);
-}
+    public interface IToDoServices
+    {
+        ToDoItem AddToDoItem(ToDoItem item);
+        ToDoItem? GetToDoItemById(int id);
+        IEnumerable<ToDoItem> GetAllToDoItems();
+        ToDoItem? UpdateToDoItem(int id, ToDoItem item);
+        void DeleteToDoItem(int id);
+    }
 }

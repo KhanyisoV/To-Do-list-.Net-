@@ -1,44 +1,76 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';  
 import { Trash2, Check, X, Plus, CheckCircle2, Circle } from 'lucide-react';
+import { getAllTodoItems, createTodoItem, updateTodoItem, deleteTodoItem } from './services/todoApi';
 
 const TodoList = () => {
   const [Todo, setTodo] = useState([]);
+
+  useEffect(() => {
+    const loadTodos = async () => {
+      try {
+        const todos = await getAllTodoItems();
+        setTodo(todos);
+      } catch (error) {
+        console.error('Error fetching todos:', error);
+      }
+    };
+    loadTodos();
+  }, []);
+
   const [newTodo, setNewTodo] = useState('');
   const [description, setDescription] = useState('');
   const [celebrateComplete, setCelebrateComplete] = useState(false);
 
-  const handleAddTodo = () => {
+  const handleAddTodo = async () => {
     if (!newTodo.trim()) return;
 
-    const created = { 
-      id: Date.now(),
-      name: newTodo,
-      isCompleted: false,
-      description: description
-    };
-    setTodo([...Todo, created]);
-    setNewTodo('');
-    setDescription('');
+    try {
+      const newItem = {
+        name: newTodo,
+        description: description,
+        isCompleted: false
+      };
+
+      const created = await createTodoItem(newItem);
+      setTodo([...Todo, created]);
+      setNewTodo('');
+      setDescription('');
+    } catch (error) {
+      console.error('Failed to add todo:', error);
+      alert('Failed to add task. Please try again.');
+    }
   };
 
-  const handleDelete = (id) => {
-    setTodo(Todo.filter(todo => todo.id !== id));
+  const handleDelete = async (id) => {
+    try {
+      await deleteTodoItem(id);
+      setTodo(Todo.filter(todo => todo.id !== id));
+    } catch (error) {
+      console.error('Failed to delete todo:', error);
+      alert('Failed to delete task. Please try again.');
+    }
   };
 
-  const handleToggleComplete = (todo) => {
+  const handleToggleComplete = async (todo) => {
     const updatedTodo = {
       ...todo,
       isCompleted: !todo.isCompleted 
     };
     
-    const updatedList = Todo.map(t => t.id === todo.id ? updatedTodo : t);
-    setTodo(updatedList);
-    
-    const allComplete = updatedList.length > 0 && updatedList.every(t => t.isCompleted);
-    if (allComplete && !todo.isCompleted) {
-      setCelebrateComplete(true);
-      setTimeout(() => setCelebrateComplete(false), 3000);
+    try {
+      await updateTodoItem(todo.id, updatedTodo);
+      
+      const updatedList = Todo.map(t => t.id === todo.id ? updatedTodo : t);
+      setTodo(updatedList);
+      
+      const allComplete = updatedList.length > 0 && updatedList.every(t => t.isCompleted);
+      if (allComplete && !todo.isCompleted) {
+        setCelebrateComplete(true);
+        setTimeout(() => setCelebrateComplete(false), 3000);
+      }
+    } catch (error) {
+      console.error('Failed to update todo:', error);
+      alert('Failed to update task. Please try again.');
     }
   };
 
@@ -924,5 +956,3 @@ const TaskCard = ({ todo, onToggle, onDelete }) => {
 };
 
 export default TodoList;
-
-

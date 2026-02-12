@@ -1,11 +1,14 @@
 ﻿using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
+using ToDoApp.data;
 using ToDoApp.Interfaces;
 using ToDoApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ToDoDbContext>(options => options.UseSqlite("Data Source=todo.db"));
 
 // Add services to the container
-builder.Services.AddSingleton<IToDoServices, ToDoService>();
+builder.Services.AddScoped<IToDoServices, ToDoService>();
 
 // REMOVE THE DUPLICATE - Keep only this one with JSON options:
 builder

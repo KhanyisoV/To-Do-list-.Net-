@@ -48,20 +48,12 @@ namespace ToDoApp.Api.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateToDoItem(int id, [FromBody] ToDoItem item)
         {
-            var existingItem = _toDoServices.GetToDoItemById(id);
-            if (existingItem == null)
-            {
+            var updated = _toDoServices.UpdateToDoItem(id, item);
+
+            if (updated == null)
                 return NotFound();
-            }
 
-            // ADD THESE TWO LINES to set the ID from route:
-            var idProperty = typeof(ToDoItem).GetProperty("Id");
-            idProperty?.SetValue(item, id);
-
-            _toDoServices.UpdateToDoItem(item);
-
-            var updatedItem = _toDoServices.GetToDoItemById(id);
-            return Ok(updatedItem);
+            return Ok(updated);
         }
 
         [HttpDelete("{id}")]
